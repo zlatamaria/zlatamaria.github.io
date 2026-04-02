@@ -143,7 +143,7 @@
         </h4>
         <div class="subheading">NAACL 2025, Findings</div>
         <p>
-            Most works on modeling the conversation history in Conversational Question Answering (CQA) report a single main result on a common CQA benchmark. While existing models show impressive results on CQA leaderboards, it remains unclear whether they are robust to shifts in setting (sometimes to more realistic ones), training data size (e.g. from large to small sets) and domain. In this work, we design and conduct the first large-scale robustness study of history modeling approaches for CQA. We find that high benchmark scores do not necessarily translate to strong robustness, and that various methods can perform extremely differently under different settings. Equipped with the insights from our study, we design a novel prompt-based history modeling approach and demonstrate its strong robustness across various settings.
+            We study how much new factual knowledge can be injected into an LLM through a LoRA adapter without damaging what the model already knows. We show that LoRA learns best from a mix of known and new facts, but even then, updating the model can hurt performance on external QA benchmarks and push it toward a few overrepresented answers. Our findings expose a sharp trade-off between packing in new knowledge and preserving general capabilities.
         </p>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2206.14796" target="_blank" rel="noopener">Paper</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1647682753540882432" target="_blank" rel="noopener">Tweet</a>
@@ -221,19 +221,6 @@
         <div class="subheading">AIED 2025, Late Breaking Results</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2410.02613" target="_blank" rel="noopener">Paper</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/nl_eye/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Can LLMs Learn Macroeconomic Narratives from Social Media?</h3>
-        <h4>
-                <span style="font-weight: normal;">Almog Gueta, Amir Feder, <u>Zorik Gekhman</u>, Ariel Goldstein, Roi Reichart</span>
-        </h4>
-        <div class="subheading">NAACL 2025, Findings</div>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2406.12109" target="_blank" rel="noopener">Paper</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/mcroeconomics/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
     <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
 </div>
