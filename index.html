@@ -82,16 +82,15 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>Inside-Out: Hidden Factual Knowledge in LLMs</h3>
+        <h3>LLM-Independent Adaptive RAG: Let the Question Speak for Itself</h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Eyal Ben David, Hadas Orgad, Eran Ofek, Yonatan Belinkov, Idan Szpektor, Jonathan Herzig, Roi Reichart</span>
+                <span style="font-weight: normal;"><u>Maria Marina</u>, Nikolay Ivanov, Sergey Pletenev, Mikhail Salnikov, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii </span>
         </h4>
-        <div class="subheading">COLM 2025</div>
+        <div class="subheading">EMNLP 2025</div>
         <p>
-            We introduce a framework for evaluating the gap between the knowledge LLMs encode internally and what they express in their outputs, and provide strong evidence of this gap across popular LLMs.
+            LLMs can sound confident even when they are wrong, and while RAG helps reduce hallucinations, it often adds heavy computational cost and can still surface misleading information. We introduce a lightweight, LLM-independent approach to adaptive retrieval that uses external signals to decide when retrieval is actually needed.  Our method matches the accuracy of more complex LLM-based systems while delivering substantial efficiency gains — showing that smarter retrieval does not have to be heavier.
         </p>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/pdf?id=f7GG1MbsSM" target="_blank" rel="noopener">Paper</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1906693729886363861" target="_blank" rel="noopener">Tweet</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/inside_out/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
     <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
@@ -100,16 +99,15 @@
 			
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?</h3>
+        <h3>Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA</h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Gal Yona, Roee Aharoni, Matan Eyal, Amir Feder, Roi Reichart, Jonathan Herzig</span>
+                <span style="font-weight: normal;"> Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Nikolay Ivanov, Daria Galimzianova, Nikita Krayko, Mikhail Salnikov, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
         </h4>
-        <div class="subheading">EMNLP 2024</div>
+        <div class="subheading">EMNLP 2025</div>
         <p>
-            We study the impact of introducing new factual knowledge during fine-tuning, on the LLM's capability to utilize its pre-existing knowledge, acquired during pre-training. We show that LLMs struggle to learn new knowledge through fine-tuning, but when they eventually do, it linearly increases their tendency to hallucinations w.r.t. their pre-existing knowledge.  Our findings highlight the potential for unintended consequences when introducing new knowledge through fine-tuning, and imply that fine-tuning may be more useful as a mechanism to enhance the utilization of pre-existing knowledge.
+			We study whether a largely overlooked factor behind LLM hallucinations in QA is the temporality of the question itself: whether its answer is stable over time or likely to change. We introduce EverGreenQA, the first multilingual dataset for evergreen question classification, and show that modern LLMs do not reliably capture this distinction, either through explicit judgments or uncertainty signals. We then train EG-E5, a lightweight classifier that reaches state-of-the-art performance, and show that evergreen classification improves self-knowledge estimation, helps filter QA benchmarks, and strongly explains GPT-4o’s retrieval behavior
         </p>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2024.emnlp-main.444.pdf" target="_blank" rel="noopener">Paper</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1791088925475270908" target="_blank" rel="noopener">Tweet</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/new_knowledge/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
     <div class="flex-shrink-0"><span class="text-primary">2024</span></div>
@@ -119,16 +117,15 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>TrueTeacher: Learning Factual Consistency Evaluation with Large Language Models</h3>
+        <h3>Beyond Detection: Rethinking Education in the Age of AI-Writing</h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Jonathan Herzig, Roee Aharoni, Chen Elkind, Idan Szpektor</span>
+                <span style="font-weight: normal;"><u>Maria Marina</u>, Alexander Panchenko, Vasily Konovalov</span>
         </h4>
-        <div class="subheading">EMNLP 2023</div>
+        <div class="subheading">AIED 2025, Late Breaking Results</div>
         <p>
-            To train models that can evaluate factual consistency in summarization, we need labeled training data—comprising document-summary pairs labeled for consistency—which is unavailable in the summarization domain. As a result, existing models heavily rely on synthetic data, where negative (inconsistent) examples are created by perturbing human-written summaries to inject errors. However, this approach results in (1) limited coverage of possible errors, as perturbation logic is usually simple, and (2) an unnatural data distribution, as perturbed summaries differ from model-generated ones. To address these limitations, we introduce TrueTeacher, a method for generating synthetic data by annotating diverse model-generated summaries using a large language model (LLM). Unlike prior work, TrueTeacher does not rely on human-written summaries and is inherently multilingual, with the resulting summaries contain more realistic errors and a natural text distribution. We release a large-scale synthetic dataset (1.4M examples) generated using TrueTeacher, along with a model checkpoint trained on this data.
+            As generative AI tools like ChatGPT enter classrooms, workplaces and everyday thinking, writing is at risk of becoming a formality – outsourced, automated and stripped of its cognitive value. But writing is not just output; it is how we learn to think. This paper explores what is lost when we let machines write for us, drawing on cognitive psychology, educational theory and real classroom practices. We argue that the process of writing – messy, slow, often frustrating – is where a human deep learning happens. The paper also explores the current possibilities of AI-text detection, how educators can adapt through smarter pedagogy rather than bans, and why the ability to recognize machine-generated language may become a critical literacy of the 21st century. In a world where writing can be faked, learning cannot.
         </p>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2023.emnlp-main.127.pdf" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1659652436410134528" target="_blank" rel="noopener">Tweet</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/google/t5_11b_trueteacher_and_anli" target="_blank" rel="noopener">Model</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/datasets/google/trueteacher" target="_blank" rel="noopener">Data</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/trueteacher/cite.bib" target="_blank" rel="noopener">Cite</a>
@@ -140,11 +137,11 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>On the Robustness of Dialogue History Representation in Conversational Question Answering: A Comprehensive Study and a New Prompt-based Method</h3>
+        <h3>How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM?</h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u><sup>*</sup>, Nadav Oved<sup>*</sup>, Orgad Keller, Idan Szpektor, Roi Reichart</span>
+                <span style="font-weight: normal;"> Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Daniil Moskovskiy, Vasily Konovalov, Pavel Braslavski, Alexander Panchenko, Mikhail Salnikov </span>
         </h4>
-        <div class="subheading">TACL 2023</div>
+        <div class="subheading">NAACL 2025, Findings</div>
         <p>
             Most works on modeling the conversation history in Conversational Question Answering (CQA) report a single main result on a common CQA benchmark. While existing models show impressive results on CQA leaderboards, it remains unclear whether they are robust to shifts in setting (sometimes to more realistic ones), training data size (e.g. from large to small sets) and domain. In this work, we design and conduct the first large-scale robustness study of history modeling approaches for CQA. We find that high benchmark scores do not necessarily translate to strong robustness, and that various methods can perform extremely differently under different settings. Equipped with the insights from our study, we design a novel prompt-based history modeling approach and demonstrate its strong robustness across various settings.
         </p>
@@ -175,11 +172,11 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>Inside-Out: Hidden Factual Knowledge in LLMs</h3>
+        <h3>LLM-Independent Adaptive RAG: Let the Question Speak for Itself</h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Eyal Ben David, Hadas Orgad, Eran Ofek, Yonatan Belinkov, Idan Szpektor, Jonathan Herzig, Roi Reichart</span>
+                <span style="font-weight: normal;"> <u>Maria Marina</u>, Nikolay Ivanov, Sergey Pletenev, Mikhail Salnikov, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
         </h4>
-        <div class="subheading">COLM 2025</div>
+        <div class="subheading">EMNLP 2025</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/pdf?id=f7GG1MbsSM" target="_blank" rel="noopener">Paper</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1906693729886363861" target="_blank" rel="noopener">Tweet</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/inside_out/cite.bib" target="_blank" rel="noopener">Cite</a>
@@ -190,11 +187,11 @@
 	
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>Confidence Improves Self-Consistency in LLMs</h3>
+        <h3>Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA</h3>
         <h4>
-                <span style="font-weight: normal;">Amir Taubenfeld, Tom Sheffer, Eran Ofek,  Amir Feder, Ariel Goldstein, <u>Zorik Gekhman</u>, Gal Yona</span>
+                <span style="font-weight: normal;"> Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Nikolay Ivanov, Daria Galimzianova, Nikita Krayko, Mikhail Salnikov, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
         </h4>
-        <div class="subheading">ACL 2025, Findings</div>
+        <div class="subheading">EMNLP 2025</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2502.06233" target="_blank" rel="noopener">Paper</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/CISC/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
@@ -203,11 +200,11 @@
 	
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations</h3>
+        <h3> Adaptive Retrieval Without Self-Knowledge? Bringing Uncertainty Back Home </h3>
         <h4>
-                <span style="font-weight: normal;">Hadas Orgad, Michael Toker, <u>Zorik Gekhman</u>, Roi Reichart, Idan Szpektor, Hadas Kotek, Yonatan Belinkov</span>
+                <span style="font-weight: normal;"> Viktor Moskvoretskii, <u>Maria Marina</u>u>, Mikhail Salnikov, Nikolay Ivanov, Sergey Pletenev, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Irina Nikishina, Alexander Panchenko </span>
         </h4>
-        <div class="subheading">ICLR 2025</div>
+        <div class="subheading">ACL 2025</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2410.02707" target="_blank" rel="noopener">Paper</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/llms_know/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
@@ -217,11 +214,11 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>NL-Eye: Abductive NLI for Images</h3>
+        <h3>Beyond Detection: Rethinking Education in the Age of AI-writing</h3>
         <h4>
-                <span style="font-weight: normal;">Mor Ventura, Michael Toker, Nitay Calderon, <u>Zorik Gekhman</u>, Yonatan Bitton, Roi Reichart</span>
+                <span style="font-weight: normal;"> <u>Maria Marina</u>u>, Alexander Panchenko, Vasily Konovalov </span>
         </h4>
-        <div class="subheading">ICLR 2025</div>
+        <div class="subheading">AIED 2025, Late Breaking Results</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2410.02613" target="_blank" rel="noopener">Paper</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/nl_eye/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
@@ -243,25 +240,25 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?</h3>
+        <h3> How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM? </h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Gal Yona, Roee Aharoni, Matan Eyal, Amir Feder, Roi Reichart, Jonathan Herzig</span>
+                <span style="font-weight: normal;">Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Daniil Moskovskiy, Vasily Konovalov, Pavel Braslavski, Alexander Panchenko, Mikhail Salnikov </span>
         </h4>
-        <div class="subheading">EMNLP 2024</div>
+        <div class="subheading">NAACL 2025, Findings</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2024.emnlp-main.444.pdf" target="_blank" rel="noopener">Paper</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1791088925475270908" target="_blank" rel="noopener">Tweet</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/new_knowledge/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
-    <div class="flex-shrink-0"><span class="text-primary">2024</span></div>
+    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
 </div>
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>Measuring the Robustness of NLP Models to Domain Shifts</h3>
+        <h3>Konstruktor: A Strong Baseline for Simple Knowledge Graph Question Answering</h3>
         <h4>
-                <span style="font-weight: normal;">Nitay Calderon<sup>*</sup>, Naveh Porat<sup>*</sup>, Eyal Ben-David, Alexander Chapanin, <u>Zorik Gekhman</u>, Nadav Oved, Vitaly Shalumov, Roi Reichart</span>
+                <span style="font-weight: normal;"> <u>Maria Marina</u>, Mikhail Salnikov, Pavel Braslavski, Alexander Panchenko </span>
         </h4>
-        <div class="subheading">EMNLP 2024, Findings</div>
+        <div class="subheading"> NLDB 2024 </div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2306.00168" target="_blank" rel="noopener">Paper</a>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/domain_robustness/cite.bib" target="_blank" rel="noopener">Cite</a>
     </div>
@@ -272,11 +269,11 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>TrueTeacher: Learning Factual Consistency Evaluation with Large Language Models</h3>
+        <h3>Answer Candidate Type Selection: Text-to-Text Language Model for Closed Book Question Answering Meets Knowledge Graphs</h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Jonathan Herzig, Roee Aharoni, Chen Elkind, Idan Szpektor</span>
+                <span style="font-weight: normal;"> Mikhail Salnikov, <u>Maria Marina</u>, Pavel Braslavski, Anton Razzhigaev, Valentin Malykh, Alexander Panchenko </span>
         </h4>
-        <div class="subheading">EMNLP 2023</div>
+        <div class="subheading">KONVENS 2023</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2023.emnlp-main.127.pdf" target="_blank" rel="noopener">Paper</a>
 	    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1659652436410134528" target="_blank" rel="noopener">Tweet</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/google/t5_11b_trueteacher_and_anli" target="_blank" rel="noopener">Model</a>
@@ -290,11 +287,11 @@
 
 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
     <div class="flex-grow-1">
-        <h3>On the Robustness of Dialogue History Representation in Conversational Question Answering: A Comprehensive Study and a New Prompt-based Method</h3>
+        <h3> Error syntax aware augmentation of feedback comment generation dataset </h3>
         <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u><sup>*</sup>, Nadav Oved<sup>*</sup>, Orgad Keller, Idan Szpektor, Roi Reichart</span>
+                <span style="font-weight: normal;">  Nikolay Babakov, <u> Maria Marina </u>, Alexander Shvets, Lilya Kazakova, Alexander Panchenko </span>
         </h4>
-        <div class="subheading">TACL 2023</div>
+        <div class="subheading">INLG 2023</div>
         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2206.14796" target="_blank" rel="noopener">Paper</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1647682753540882432" target="_blank" rel="noopener">Tweet</a>
 	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/zorikg/MarCQAp" target="_blank" rel="noopener">Code</a>
@@ -303,51 +300,6 @@
     <div class="flex-shrink-0"><span class="text-primary">2023</span></div>
 </div>
 
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Using Text Injection to Improve Recognition of Personal Identifiers in Speech</h3>
-        <h4>
-                <span style="font-weight: normal;">Yochai Blau, Rohan Agrawal, Lior Madmony, Gary Wang, Andrew Rosenberg, Zhehuai Chen, <u>Zorik Gekhman</u>, Genady Beryozkin, Parisa Haghani, Bhuvana Ramabhadran</span>
-        </h4>
-        <div class="subheading">INTERSPEECH 2023</div>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://www.isca-archive.org/interspeech_2023/blau23_interspeech.pdf" target="_blank" rel="noopener">Paper</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/text_injection/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2023</span></div>
-</div>
-
-	
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>RED-ACE: Robust Error Detection for ASR using Confidence Embeddings</h3>
-        <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u><sup>*</sup>, Dina Zverinski<sup>*</sup>, Jonathan Mallinson, Genady Beryozkin</span>
-        </h4>
-        <div class="subheading">EMNLP 2022</div>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2022.emnlp-main.180.pdf" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://x.com/zorikgekhman/status/1578107371473117185" target="_blank" rel="noopener">Tweet</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/google-research/google-research/tree/master/red-ace" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/marcqap/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2022</span></div>
-</div>
-
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>KoBE: Knowledge-Based Machine Translation Evaluation</h3>
-        <h4>
-                <span style="font-weight: normal;"><u>Zorik Gekhman</u>, Roee Aharoni ,Genady Beryozkin, Markus Freitag, Wolfgang Macherey</span>
-        </h4>
-        <div class="subheading">EMNLP 2020, Findings</div>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2020.findings-emnlp.287.pdf" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/google-research/google-research/tree/master/kobe" target="_blank" rel="noopener">Code and Data</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/kobe/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2020</span></div>
-</div>
 
 
 			
