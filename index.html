@@ -14,304 +14,442 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+        <style>
+            .news-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
+            }
+
+            .news-item {
+                display: grid;
+                grid-template-columns: 180px 1fr;
+                gap: 1rem;
+                padding: 1rem 1.2rem;
+                border-left: 4px solid #4f7f52;
+                background: #f8faf8;
+                border-radius: 0.75rem;
+            }
+
+            .news-meta {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .news-date {
+                font-weight: 700;
+                color: #4f7f52;
+                letter-spacing: 0.02em;
+            }
+
+            .news-badge {
+                display: inline-block;
+                width: fit-content;
+                padding: 0.25rem 0.65rem;
+                border-radius: 999px;
+                font-size: 0.78rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                background: #e9ecef;
+                color: #495057;
+            }
+
+            .news-badge.upcoming {
+                background: #e8f1ff;
+                color: #2356a8;
+            }
+
+            .news-badge.new {
+                background: #e7f7ec;
+                color: #1f7a3f;
+            }
+
+            .news-badge.paper {
+                background: #f3e8ff;
+                color: #6b21a8;
+            }
+
+            .news-badge.talk {
+                background: #fff4dd;
+                color: #9a6700;
+            }
+
+            .news-badge.award {
+                background: #ffe8e8;
+                color: #b42318;
+            }
+
+            .news-badge.workshop {
+                background: #e8f7f7;
+                color: #0f766e;
+            }
+
+            .news-badge.submission {
+                background: #eef2ff;
+                color: #4338ca;
+            }
+
+            .news-body strong {
+                font-size: 1.08rem;
+            }
+
+            @media (max-width: 768px) {
+                .news-item {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
     </head>
+
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Maria Marina</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/maria_marina_cropped.jpg" alt="..." /></span>
+                <span class="d-none d-lg-block">
+                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/maria_marina_cropped.jpg" alt="..." />
+                </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#news">News</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#selectedpublications">Selected Publications</a></li>
-		    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#allpublications">All Publications</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li> -->
-                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li> -->
-                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li> -->
-                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li> -->
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#allpublications">All Publications</a></li>
                 </ul>
             </div>
         </nav>
+
         <!-- Page Content-->
-		
         <div class="container-fluid p-0">
-	
-			
+
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">
                         Maria Marina
                     </h1>
-				
-					<p class="lead mb-5"> 
-				    I am a third-year PhD student in Computer Science at <a href="https://www.skoltech.ru/en/">Skoltech</a>, advised by <a href="https://scholar.google.com/citations?user=BYba9hcAAAAJ&hl=en">Alexander Panchenko</a>. Since February 2024, I have also been a Research Fellow at <a href="https://airi.net/">AIRI</a>, where I am part of the Computational Semantics Lab.
-				</p>
-				
-				<p class="lead mb-5">
-				    My research focuses on the robustness and interpretability of large language models, with a particular emphasis on factuality, hallucinations, and the nature of the knowledge they acquire. I develop rigorous methods for evaluating model robustness, investigate the roots of their failures, and explore ways to make them more reliable and trustworthy.
-				</p>
-				
-				<h4>Education</h4>
-				
-				<p class="lead mb-5">
-				    I hold a BA in Economics from the <a href="https://www.hse.ru/en/">HSE</a>, an MA in Economics from <a href="https://www.nes.ru/?lang=en">NES</a>, and an MSc in Mathematics and Computer Science from <a href="https://www.skoltech.ru/en/">Skoltech</a>, where I graduated summa cum laude.
-				</p>
-				<div class="social-icons">
-                        
+
+                    <p class="lead mb-5">
+                        I am a third-year PhD student in Computer Science at <a href="https://www.skoltech.ru/en/">Skoltech</a>, advised by <a href="https://scholar.google.com/citations?user=BYba9hcAAAAJ&hl=en">Alexander Panchenko</a>. Since February 2024, I have also been a Research Fellow at <a href="https://airi.net/">AIRI</a>, where I am part of the Computational Semantics Lab.
+                    </p>
+
+                    <p class="lead mb-5">
+                        My research focuses on the robustness and interpretability of large language models, with a particular emphasis on factuality, hallucinations, and the nature of the knowledge they acquire. I develop rigorous methods for evaluating model robustness, investigate the roots of their failures, and explore ways to make them more reliable and trustworthy.
+                    </p>
+
+                    <h4>Education</h4>
+
+                    <p class="lead mb-5">
+                        I hold a BA in Economics from the <a href="https://www.hse.ru/en/">HSE</a>, an MA in Economics from <a href="https://www.nes.ru/?lang=en">NES</a>, and an MSc in Mathematics and Computer Science from <a href="https://www.skoltech.ru/en/">Skoltech</a>, where I graduated summa cum laude.
+                    </p>
+
+                    <div class="social-icons">
                         <a class="social-icon" href="https://scholar.google.com/citations?user=VICqxjsAAAAJ"><i class="ai ai-google-scholar"></i></a>
-			<a class="social-icon" href="https://t.me/zlatamaria"><i class="fab fa-telegram"></i></a>
-					<a class="social-icon" href="https://www.linkedin.com/in/maria-marina-nlp/"><i class="fab fa-linkedin-in"></i></a>
-                        
+                        <a class="social-icon" href="https://t.me/zlatamaria"><i class="fab fa-telegram"></i></a>
+                        <a class="social-icon" href="https://www.linkedin.com/in/maria-marina-nlp/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-			<p class="lead mb-5" style="margin-top: 1rem;">
-    <img src="./assets/email_icon.webp" alt="email icon" width="45" height="50"> 
-    <a href="mailto:m.marina.scientia@gmail.com">m.marina.scientia@gmail.com</a>
-			</p>		
+
+                    <p class="lead mb-5" style="margin-top: 1rem;">
+                        <img src="./assets/email_icon.webp" alt="email icon" width="45" height="50">
+                        <a href="mailto:m.marina.scientia@gmail.com">m.marina.scientia@gmail.com</a>
+                    </p>
                 </div>
             </section>
+
             <hr class="m-0" />
-			
-			<!-- Selected Publications -->
-			
-			<section class="resume-section" id="selectedpublications">
+
+            <!-- News -->
+            <section class="resume-section" id="news">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">News</h2>
+
+                    <div class="news-list">
+                        <article class="news-item" data-date="2026-04-03" data-status="submission">
+                            <div class="news-meta">
+                                <span class="news-date"></span>
+                                <span class="news-badge"></span>
+                            </div>
+                            <div class="news-body">
+                                <strong>“FactOWL: A Cost-Efficient Tool for Long-Form Factuality Evaluation” submitted to SIGIR 2026</strong><br>
+                                Our paper has been submitted to the 49th International ACM SIGIR Conference on Research and Development, to be held on July 20, 2026 in Melbourne, Australia.
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="m-0" />
+
+            <!-- Selected Publications -->
+            <section class="resume-section" id="selectedpublications">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Selected Publications</h2>
 
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>LLM-Independent Adaptive RAG: Let the Question Speak for Itself</h3>
-        <h4>
-                <span style="font-weight: normal;"><u>Maria Marina</u>, Nikolay Ivanov, Sergey Pletenev, Mikhail Salnikov, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii </span>
-        </h4>
-        <div class="subheading">EMNLP 2025</div>
-        <p>
-            LLMs can sound confident even when they are wrong, and while RAG helps reduce hallucinations, it often adds heavy computational cost and can still surface misleading information. We introduce a lightweight, LLM-independent approach to adaptive retrieval that uses external signals to decide when retrieval is actually needed.  Our method matches the accuracy of more complex LLM-based systems while delivering substantial efficiency gains — showing that smarter retrieval does not have to be heavier.
-        </p>
-          <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.439/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/External_Adaptive_Retrieval" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LLM_Independent_AR/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>LLM-Independent Adaptive RAG: Let the Question Speak for Itself</h3>
+                            <h4>
+                                <span style="font-weight: normal;"><u>Maria Marina</u>, Nikolay Ivanov, Sergey Pletenev, Mikhail Salnikov, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
+                            </h4>
+                            <div class="subheading">EMNLP 2025</div>
+                            <p>
+                                LLMs can sound confident even when they are wrong, and while RAG helps reduce hallucinations, it often adds heavy computational cost and can still surface misleading information. We introduce a lightweight, LLM-independent approach to adaptive retrieval that uses external signals to decide when retrieval is actually needed. Our method matches the accuracy of more complex LLM-based systems while delivering substantial efficiency gains — showing that smarter retrieval does not have to be heavier.
+                            </p>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.439/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/External_Adaptive_Retrieval" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LLM_Independent_AR/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
-			
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA</h3>
-        <h4>
-                <span style="font-weight: normal;"> Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Nikolay Ivanov, Daria Galimzianova, Nikita Krayko, Mikhail Salnikov, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
-        </h4>
-        <div class="subheading">EMNLP 2025</div>
-        <p>
-			We study whether a largely overlooked factor behind LLM hallucinations in QA is the temporality of the question itself: whether its answer is stable over time or likely to change. We introduce EverGreenQA, the first multilingual dataset for evergreen question classification, and show that modern LLMs do not reliably capture this distinction, either through explicit judgments or uncertainty signals. We then train EG-E5, a lightweight classifier that reaches state-of-the-art performance, and show that evergreen classification improves self-knowledge estimation, helps filter QA benchmarks, and strongly explains GPT-4o’s retrieval behavior
-        </p>
-         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.434/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/Evergreen" target="_blank" rel="noopener">Code</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/collections/s-nlp/evergreen" target="_blank" rel="noopener">Data</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/EverGreen/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Nikolay Ivanov, Daria Galimzianova, Nikita Krayko, Mikhail Salnikov, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
+                            </h4>
+                            <div class="subheading">EMNLP 2025</div>
+                            <p>
+                                We study whether a largely overlooked factor behind LLM hallucinations in QA is the temporality of the question itself: whether its answer is stable over time or likely to change. We introduce EverGreenQA, the first multilingual dataset for evergreen question classification, and show that modern LLMs do not reliably capture this distinction, either through explicit judgments or uncertainty signals. We then train EG-E5, a lightweight classifier that reaches state-of-the-art performance, and show that evergreen classification improves self-knowledge estimation, helps filter QA benchmarks, and strongly explains GPT-4o’s retrieval behavior.
+                            </p>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.434/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/Evergreen" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/collections/s-nlp/evergreen" target="_blank" rel="noopener">Data</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/EverGreen/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Beyond Detection: Rethinking Education in the Age of AI-Writing</h3>
+                            <h4>
+                                <span style="font-weight: normal;"><u>Maria Marina</u>, Alexander Panchenko, Vasily Konovalov</span>
+                            </h4>
+                            <div class="subheading">AIED 2025, Late Breaking Results</div>
+                            <p>
+                                As generative AI tools like ChatGPT enter classrooms, workplaces and everyday thinking, writing is at risk of becoming a formality – outsourced, automated and stripped of its cognitive value. But writing is not just output; it is how we learn to think. This paper explores what is lost when we let machines write for us, drawing on cognitive psychology, educational theory and real classroom practices. We argue that the process of writing – messy, slow, often frustrating – is where human deep learning happens. The paper also explores the current possibilities of AI-text detection, how educators can adapt through smarter pedagogy rather than bans, and why the ability to recognize machine-generated language may become a critical literacy of the 21st century. In a world where writing can be faked, learning cannot.
+                            </p>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.25329" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Beyond_detection/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Beyond Detection: Rethinking Education in the Age of AI-Writing</h3>
-        <h4>
-                <span style="font-weight: normal;"><u>Maria Marina</u>, Alexander Panchenko, Vasily Konovalov</span>
-        </h4>
-        <div class="subheading">AIED 2025, Late Breaking Results</div>
-        <p>
-            As generative AI tools like ChatGPT enter classrooms, workplaces and everyday thinking, writing is at risk of becoming a formality – outsourced, automated and stripped of its cognitive value. But writing is not just output; it is how we learn to think. This paper explores what is lost when we let machines write for us, drawing on cognitive psychology, educational theory and real classroom practices. We argue that the process of writing – messy, slow, often frustrating – is where a human deep learning happens. The paper also explores the current possibilities of AI-text detection, how educators can adapt through smarter pedagogy rather than bans, and why the ability to recognize machine-generated language may become a critical literacy of the 21st century. In a world where writing can be faked, learning cannot.
-        </p>
-          <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.25329" target="_blank" rel="noopener">Paper</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Beyond_detection/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
-
-
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM?</h3>
-        <h4>
-                <span style="font-weight: normal;"> Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Daniil Moskovskiy, Vasily Konovalov, Pavel Braslavski, Alexander Panchenko, Mikhail Salnikov </span>
-        </h4>
-        <div class="subheading">NAACL 2025, Findings</div>
-        <p>
-            We study how much new factual knowledge can be injected into an LLM through a LoRA adapter without damaging what the model already knows. We show that LoRA learns best from a mix of known and new facts, but even then, updating the model can hurt performance on external QA benchmarks and push it toward a few overrepresented answers. Our findings expose a sharp trade-off between packing in new knowledge and preserving general capabilities.
-        </p>
-          <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.findings-naacl.243/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AIRI-Institute/knowledge-packing" target="_blank" rel="noopener">Code</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://huggingface.co/datasets/s-nlp/Mistral-7b-0.3-Instruct-DBpedia-HighlyKnown" target="_blank" rel="noopener">Data</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LoRA/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
-
-
-			
-
-
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM?</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Daniil Moskovskiy, Vasily Konovalov, Pavel Braslavski, Alexander Panchenko, Mikhail Salnikov</span>
+                            </h4>
+                            <div class="subheading">NAACL 2025, Findings</div>
+                            <p>
+                                We study how much new factual knowledge can be injected into an LLM through a LoRA adapter without damaging what the model already knows. We show that LoRA learns best from a mix of known and new facts, but even then, updating the model can hurt performance on external QA benchmarks and push it toward a few overrepresented answers. Our findings expose a sharp trade-off between packing in new knowledge and preserving general capabilities.
+                            </p>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.findings-naacl.243/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AIRI-Institute/knowledge-packing" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/datasets/s-nlp/Mistral-7b-0.3-Instruct-DBpedia-HighlyKnown" target="_blank" rel="noopener">Data</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LoRA/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
                 </div>
             </section>
+
             <hr class="m-0" />
 
+            <!-- All Publications -->
+            <section class="resume-section" id="allpublications">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">All Publications</h2>
 
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>LLM-Independent Adaptive RAG: Let the Question Speak for Itself</h3>
+                            <h4>
+                                <span style="font-weight: normal;"><u>Maria Marina</u>, Nikolay Ivanov, Sergey Pletenev, Mikhail Salnikov, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
+                            </h4>
+                            <div class="subheading">EMNLP 2025</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.439/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/External_Adaptive_Retrieval" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LLM_Independent_AR/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Nikolay Ivanov, Daria Galimzianova, Nikita Krayko, Mikhail Salnikov, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
+                            </h4>
+                            <div class="subheading">EMNLP 2025</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.434/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/Evergreen" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/collections/s-nlp/evergreen" target="_blank" rel="noopener">Data</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/EverGreen/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
-<!-- All Publications -->
-			
-<section class="resume-section" id="allpublications">
-<div class="resume-section-content">
-<h2 class="mb-5">All Publications</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Adaptive Retrieval Without Self-Knowledge? Bringing Uncertainty Back Home</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Viktor Moskvoretskii, <u>Maria Marina</u>, Mikhail Salnikov, Nikolay Ivanov, Sergey Pletenev, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Irina Nikishina, Alexander Panchenko</span>
+                            </h4>
+                            <div class="subheading">ACL 2025</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.acl-long.319/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/AdaRAGUE" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/UC_AR_ACL/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>LLM-Independent Adaptive RAG: Let the Question Speak for Itself</h3>
-        <h4>
-                <span style="font-weight: normal;"> <u>Maria Marina</u>, Nikolay Ivanov, Sergey Pletenev, Mikhail Salnikov, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
-        </h4>
-        <div class="subheading">EMNLP 2025</div>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.439/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/External_Adaptive_Retrieval" target="_blank" rel="noopener">Code</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LLM_Independent_AR/cite.bib" target="_blank" rel="noopener">Cite</a>
-   </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Beyond Detection: Rethinking Education in the Age of AI-Writing</h3>
+                            <h4>
+                                <span style="font-weight: normal;"><u>Maria Marina</u>, Alexander Panchenko, Vasily Konovalov</span>
+                            </h4>
+                            <div class="subheading">AIED 2025, Late Breaking Results</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.25329" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Beyond_detection/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
-	
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Will It Still Be True Tomorrow? Multilingual Evergreen Question Classification to Improve Trustworthy QA</h3>
-        <h4>
-                <span style="font-weight: normal;"> Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Nikolay Ivanov, Daria Galimzianova, Nikita Krayko, Mikhail Salnikov, Vasily Konovalov, Alexander Panchenko, Viktor Moskvoretskii</span>
-        </h4>
-        <div class="subheading">EMNLP 2025</div>
-            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.emnlp-main.434/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/Evergreen" target="_blank" rel="noopener">Code</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/collections/s-nlp/evergreen" target="_blank" rel="noopener">Data</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/EverGreen/cite.bib" target="_blank" rel="noopener">Cite</a>
-   </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
-	
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3> Adaptive Retrieval Without Self-Knowledge? Bringing Uncertainty Back Home </h3>
-        <h4>
-                <span style="font-weight: normal;"> Viktor Moskvoretskii, <u>Maria Marina</u>, Mikhail Salnikov, Nikolay Ivanov, Sergey Pletenev, Daria Galimzianova, Nikita Krayko, Vasily Konovalov, Irina Nikishina, Alexander Panchenko </span>
-        </h4>
-        <div class="subheading">ACL 2025</div>
-          <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.acl-long.319/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/AdaRAGUE" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/UC_AR_ACL/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM?</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Daniil Moskovskiy, Vasily Konovalov, Pavel Braslavski, Alexander Panchenko, Mikhail Salnikov</span>
+                            </h4>
+                            <div class="subheading">NAACL 2025, Findings</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.findings-naacl.243/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AIRI-Institute/knowledge-packing" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://huggingface.co/datasets/s-nlp/Mistral-7b-0.3-Instruct-DBpedia-HighlyKnown" target="_blank" rel="noopener">Data</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LoRA/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
+                    </div>
 
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Konstruktor: A Strong Baseline for Simple Knowledge Graph Question Answering</h3>
+                            <h4>
+                                <span style="font-weight: normal;"><u>Maria Marina</u>, Mikhail Salnikov, Pavel Braslavski, Alexander Panchenko</span>
+                            </h4>
+                            <div class="subheading">NLDB 2024</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2409.15902" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/konstruktor" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Konstruktor/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2024</span></div>
+                    </div>
 
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Beyond Detection: Rethinking Education in the Age of AI-writing</h3>
-        <h4>
-                <span style="font-weight: normal;"> <u>Maria Marina</u>, Alexander Panchenko, Vasily Konovalov </span>
-        </h4>
-        <div class="subheading">AIED 2025, Late Breaking Results</div>
-         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2603.25329" target="_blank" rel="noopener">Paper</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Beyond_detection/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Answer Candidate Type Selection: Text-to-Text Language Model for Closed Book Question Answering Meets Knowledge Graphs</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Mikhail Salnikov, <u>Maria Marina</u>, Pavel Braslavski, Anton Razzhigaev, Valentin Malykh, Alexander Panchenko</span>
+                            </h4>
+                            <div class="subheading">KONVENS 2023</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2023.konvens-main.16.pdf" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/m3m/blob/main/app/pipelines/act_selection.py" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/ACT/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2023</span></div>
+                    </div>
 
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3> How Much Knowledge Can You Pack into a LoRA Adapter without Harming LLM? </h3>
-        <h4>
-                <span style="font-weight: normal;">Sergey Pletenev<sup>*</sup>, <u>Maria Marina</u><sup>*</sup>, Daniil Moskovskiy, Vasily Konovalov, Pavel Braslavski, Alexander Panchenko, Mikhail Salnikov </span>
-        </h4>
-        <div class="subheading">NAACL 2025, Findings</div>
-            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2025.findings-naacl.243/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/AIRI-Institute/knowledge-packing" target="_blank" rel="noopener">Code</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href=https://huggingface.co/datasets/s-nlp/Mistral-7b-0.3-Instruct-DBpedia-HighlyKnown" target="_blank" rel="noopener">Data</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/LoRA/cite.bib" target="_blank" rel="noopener">Cite</a>
-  </div>
-    <div class="flex-shrink-0"><span class="text-primary">2025</span></div>
-</div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3>Error syntax aware augmentation of feedback comment generation dataset</h3>
+                            <h4>
+                                <span style="font-weight: normal;">Nikolay Babakov, <u>Maria Marina</u>, Alexander Shvets, Lilya Kazakova, Alexander Panchenko</span>
+                            </h4>
+                            <div class="subheading">INLG 2023</div>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2023.inlg-genchal.6/" target="_blank" rel="noopener">Paper</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/feedback_generation_nigula" target="_blank" rel="noopener">Code</a>
+                            <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Error_Feedback/cite.bib" target="_blank" rel="noopener">Cite</a>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2023</span></div>
+                    </div>
+                </div>
+            </section>
 
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Konstruktor: A Strong Baseline for Simple Knowledge Graph Question Answering</h3>
-        <h4>
-                <span style="font-weight: normal;"> <u>Maria Marina</u>, Mikhail Salnikov, Pavel Braslavski, Alexander Panchenko </span>
-        </h4>
-        <div class="subheading"> NLDB 2024 </div>
-         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2409.15902" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/konstruktor" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Konstruktor/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2024</span></div>
-</div>
+            <hr class="m-0" />
+        </div>
 
-
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3>Answer Candidate Type Selection: Text-to-Text Language Model for Closed Book Question Answering Meets Knowledge Graphs</h3>
-        <h4>
-                <span style="font-weight: normal;"> Mikhail Salnikov, <u>Maria Marina</u>, Pavel Braslavski, Anton Razzhigaev, Valentin Malykh, Alexander Panchenko </span>
-        </h4>
-        <div class="subheading">KONVENS 2023</div>
-         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2023.konvens-main.16.pdf" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/m3m/blob/main/app/pipelines/act_selection.py" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/ACT/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2023</span></div>
-</div>
-
-
-
-<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-    <div class="flex-grow-1">
-        <h3> Error syntax aware augmentation of feedback comment generation dataset </h3>
-        <h4>
-                <span style="font-weight: normal;">  Nikolay Babakov, <u>Maria Marina</u>, Alexander Shvets, Lilya Kazakova, Alexander Panchenko </span>
-        </h4>
-        <div class="subheading">INLG 2023</div>
-         <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2023.inlg-genchal.6/" target="_blank" rel="noopener">Paper</a>
-	<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/s-nlp/feedback_generation_nigula" target="_blank" rel="noopener">Code</a>
-        <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="./publications/Error_Feedback/cite.bib" target="_blank" rel="noopener">Cite</a>
-    </div>
-    <div class="flex-shrink-0"><span class="text-primary">2023</span></div>
-</div>
-
-
-
-			
-
-
-</div>
-</section>
-<hr class="m-0" />
-
-
-
-            
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-		<!-- Load jQuery, SimpleModal and Basic JS files -->
-		<script type='text/javascript' src='js/jquery.js'></script>
-		<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
-		<script type='text/javascript' src='js/basic.js'></script>
-		
+        <!-- Load jQuery, SimpleModal and Basic JS files -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.simplemodal.js"></script>
+        <script type="text/javascript" src="js/basic.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const formatter = new Intl.DateTimeFormat("en", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                });
+
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const labelMap = {
+                    paper: "Paper",
+                    talk: "Talk",
+                    award: "Award",
+                    workshop: "Workshop",
+                    submission: "Submitted",
+                    upcoming: "Upcoming",
+                    new: "New"
+                };
+
+                document.querySelectorAll(".news-item").forEach((item) => {
+                    const rawDate = item.dataset.date;
+                    const manualStatus = (item.dataset.status || "").toLowerCase();
+
+                    if (!rawDate) return;
+
+                    const date = new Date(rawDate + "T00:00:00");
+                    const dateEl = item.querySelector(".news-date");
+                    const badgeEl = item.querySelector(".news-badge");
+
+                    if (dateEl) {
+                        dateEl.textContent = formatter.format(date);
+                    }
+
+                    let finalStatus = manualStatus;
+
+                    if (!manualStatus) {
+                        const diffDays = Math.floor((today - date) / (1000 * 60 * 60 * 24));
+                        if (date > today) {
+                            finalStatus = "upcoming";
+                        } else if (diffDays >= 0 && diffDays <= 45) {
+                            finalStatus = "new";
+                        }
+                    }
+
+                    if (badgeEl && finalStatus) {
+                        badgeEl.textContent = labelMap[finalStatus] || finalStatus;
+                        badgeEl.classList.add(finalStatus);
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
